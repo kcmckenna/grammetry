@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:danger] = "Please check all fields..."
+      # user informed of incomplete form
       redirect_to new_user_path
     end
   end
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:danger] = "Please check all fields..."
+      # user notified of incomplete form
       redirect_to new_user_path
     end
   end
