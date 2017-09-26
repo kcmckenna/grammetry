@@ -1,0 +1,11 @@
+<h1>Posts#show</h1>
+<p>Find me in app/views/posts/show.html.erb</p>
+
+<h1><%= @post.title %></h1>
+<h2><%= @post.body %></h2>
+<h2><%= @post.pic_url %></h2>
+
+<!-- show the name of the user who posted the sandwich -->
+Posted by: <%= link_to @post.user.name, user_path(@post.user) %>
+
+about <%= time_ago_in_words @post.created_at %> ago
