@@ -46,8 +46,8 @@
     </div>
     <div class="form-group">
         <div class="col-md-8 col-md-offset-4">
-            <%= f.submit 'Update Account', class: 'btn btn-success' %>
-            <%= link_to "Delete Account", user_path(current_user), class: 'btn btn-danger' %>
+            <%= f.submit 'Update Account', class: 'btn btn-success', method: 'patch' %>
+            <%= link_to "Delete Account", user_path(current_user), class: 'btn btn-danger', method: 'delete' %>
         </div>
     </div>
 </fieldset>

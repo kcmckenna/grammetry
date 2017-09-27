@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     # return current user or set it to what is found in cookie, only if there is one to begin with
   end
 
+  def current_post
+    @current_post ||= Post.find(session[:post_id]) if session[:post_id]
+  end
+
   def logged_in?
     !!current_user
   end

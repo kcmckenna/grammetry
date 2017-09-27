@@ -1,31 +1,22 @@
 <h1>Posts#new</h1>
 <p>Find me in app/views/posts/new.html.erb</p>
 
-<h1>My Posts</h1>
+<%= form_for @post do |f| %>
+<h1>Create new post:</h1>
+<div class="form-group">
+    <%= f.label :title, 'Title*', class: '', placeholder: "Title" %>
+    <%= f.text_field :title, class: 'form-control' %>
+</div>
 
-<%= form_for current_user do |f| %>
-    <%= f.text_field :title, placeholder: "Title" %>
-    <%= f.text_area :body, placeholder: "Body" %>
-    <%= f.text_field :pic_url, placeholder: "Add Link Here" %>
-    <%= f.submit 'Add Post' %>
+<div class="form-group">
+    <%= f.label :body, 'Body*', class: '', placeholder: "What do you want to say?" %>
+    <%= f.text_area :body, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+    <%= f.label :pic_url, 'Photo Link*', class: '', placeholder: "Put photo link here" %>
+    <%= f.url_field :pic_url, class: 'form-control' %>
+</div>
+
+<%= f.submit 'Add Post', class: 'btn btn-primary' %>
 <% end %>
-
-
-<!-- <%= form_for (@post.current_user) do |f| %>
-<h1>Add a Post:</h1>
-    <div class="form-group">
-        <%= f.label :title, 'Title*', class: '' %>
-        <%= f.text_field :title, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-        <%= f.label :body, 'Body*', class: '' %>
-        <%= f.text_area :body, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-        <%= f.label :pic_url, 'Add Link Here*', class: '' %>
-        <%= f.url_field :pic_url, class: 'form-control-file' %>
-     </div>
-<% end %> -->
-
-
-

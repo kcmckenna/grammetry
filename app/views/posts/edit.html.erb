@@ -1,2 +1,26 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+
+<%= form_for @post, :html => {class: 'edit_post form-horizontal'} do |f| %>
+<div class="row"><legend class="col-md-4 col-md-offset-4">Edit Post:</legend></div>
+<fieldset>
+<div class="form-group">
+        <%= f.label :title, 'Title*', class: '', placeholder: "Title" %>
+        <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :body, 'Body*', class: '', placeholder: "What do you want to say?" %>
+        <%= f.text_area :body, class: 'form-control' %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :pic_url, 'Photo Link*', class: '', placeholder: "Put photo link here" %>
+        <%= f.url_field :pic_url, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <div class="col-md-8 col-md-offset-4">
+            <%= f.submit 'Update Post', class: 'btn btn-success', method: 'patch' %>
+            <%= link_to 'Delete Post', post_path(current_user), class: 'btn btn-danger', method: 'delete' %>
+        </div>
+    </div>
+</fieldset>
+<% end %>

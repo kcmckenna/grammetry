@@ -1,14 +1,15 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-
-
-
 <div class="jumbotron">
-        <h1 class="display-3">Welcome to Grammetry</h1>
-        <p class="lead">Connect with fellow IG users to meetup for real life photo adventures</p>
-        <hr class="my-4">
-        <p>It's easy and free to sign up. Click below to get started!</p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
-      </div>
+    <h1 class="display-3">Welcome to Grammetry</h1>
+    <p class="lead">Connect with fellow IG users to meetup for real life photo adventures</p>
+    <hr class="my-4">
+    <p>It's easy and free to sign up. Click below to get started!</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="<%= link_to 'Sign Up', new_user_path, class: 'nav-link' %>"></a>
+    </p>
+</div>
+
+<ul>
+    <% @users.each do |p| %>
+        <li><%= link_to(p.name) %></li>
+    <% end %>
+</ul>

@@ -2,11 +2,14 @@
 <p>Find me in app/views/users/show.html.erb</p>
 
 <h1><%= @user.name %></h1>
-
 <h3><%= @user.location %></h3>
-
 <h3><%= @user.zip_code %></h3>
-
 <p><%= @user.bio %></p>
+<br>
+<ul>
+    <%= @user.posts.each do |u| %>
+        <li><%= link_to(u.title) %></li>
+    <% end %>
+</ul>
 
-<%= link_to 'See Posts', post_path(current_user), class: 'nav-link' %>
+<%= link_to 'Go to Posts', post_path(current_user), class: 'nav-link' %>
