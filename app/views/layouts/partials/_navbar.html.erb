@@ -4,8 +4,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav md-auto">
+    <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <ul class="navbar-nav">
         <% if logged_in? %>
             <li class="nav-item">
             <%= link_to 'Home', user_path(current_user), class: 'nav-link' %>
@@ -22,8 +23,8 @@
             <!-- <li class="nav-item">
                     <button class="btn btn-danger navbar-btn" <%= link_to 'Delete Account', user_path(current_user), class: 'nav-link', method: 'delete' %> </button>
             </li> -->
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" action="<%= users_list_path %>" method="get">
+            <input name="query" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         <% else %>

@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= "home" if current_page?(root_path) %>">
 
     <%= render 'layouts/partials/navbar' %>
     <%= render 'layouts/partials/flash' %>

@@ -8,5 +8,7 @@
 <!-- show the name of the user who made the post -->
 Posted by: <%= link_to @post.user.name, user_path(@post.user) %>
 about <%= time_ago_in_words @post.created_at %> ago
-<%= link_to 'Edit Post', edit_post_path(@post.id), class: 'btn btn-warning btn-lg"' %>
 
+<% if current_user == @post.user %>
+<%= link_to 'Edit Post', edit_post_path(@post.id), class: 'btn btn-warning btn-lg"' %>
+<% end %>

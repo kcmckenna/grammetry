@@ -25,6 +25,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    unless @post.user == current_user
+      flash[:danger] = "You don't have access to that..."
+      redirect_to posts_path
+    end
   end
 
   def update

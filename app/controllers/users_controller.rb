@@ -48,7 +48,8 @@ class UsersController < ApplicationController
   end
 
   def list_users
-    @users = User.all
+    # @users = User.all
+    @users = User.where("name ILIKE :query", { query: "%#{params[:query]}%"})
   end
 
   private
