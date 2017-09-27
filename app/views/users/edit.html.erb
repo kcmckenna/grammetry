@@ -45,6 +45,12 @@
         </div>
     </div>
     <div class="form-group">
+        <%= f.label :avatar, 'Profile Picture', class: '' %>
+        <div class="col-md-5"></div>
+            <%= f.file_field :avatar, class: 'form-control' %>
+        </div>
+    </div>
+    <div class="form-group">
         <div class="col-md-8 col-md-offset-4">
             <%= f.submit 'Update Account', class: 'btn btn-success', method: 'patch' %>
             <%= link_to "Delete Account", user_path(current_user), class: 'btn btn-danger', method: 'delete' %>

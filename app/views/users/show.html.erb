@@ -2,14 +2,17 @@
 <p>Find me in app/views/users/show.html.erb</p>
 
 <h1><%= @user.name %></h1>
+<%= image_tag @user.avatar.url(:medium) %>
 <h3><%= @user.location %></h3>
 <h3><%= @user.zip_code %></h3>
 <p><%= @user.bio %></p>
 <br>
 <ul>
-    <%= @user.posts.each do |p| %>
+    <% @user.posts.each do |p| %>
         <li><%= link_to(p.title, post_path(p)) %></li>
     <% end %>
 </ul>
+
+<%= link_to 'Go to All Users', users_list_path, class: 'btn btn-success btn-lg"' %>
 
 <%= link_to 'Go to All Posts', posts_path, class: 'btn btn-success btn-lg"' %>

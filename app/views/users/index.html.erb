@@ -7,9 +7,3 @@
     <%= link_to 'Sign Up', new_user_path, class: 'btn btn-info btn-lg"' %>
     </p>
 </div>
-
-<ul>
-    <% @users.each do |u| %>
-        <li><%= link_to u.name, user_path(u) %></li>
-    <% end %>
-</ul>

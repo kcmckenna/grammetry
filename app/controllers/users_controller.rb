@@ -47,8 +47,12 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def list_users
+    @users = User.all
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :email, :bio, :location, :zip_code, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :bio, :location, :zip_code, :password, :password_confirmation, :avatar)
   end
 end
