@@ -3,7 +3,7 @@
 
 <h1><%= @post.title %></h1>
 <h2><%= @post.body %></h2>
-<h2><%= @post.pic_url %></h2>
+<h2><%= image_tag @post.picture.url %></h2>
 
 <!-- show the name of the user who made the post -->
 Posted by: <%= link_to @post.user.name, user_path(@post.user) %>

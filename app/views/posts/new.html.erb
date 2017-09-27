@@ -14,9 +14,13 @@
 </div>
 
 <div class="form-group">
-    <%= f.label :pic_url, 'Photo Link*', class: '', placeholder: "Put photo link here" %>
-    <%= f.url_field :pic_url, class: 'form-control' %>
+    <%= f.label :pic_url, 'Post Photo*', class: '', placeholder: "Put photo link here" %>
+    <%= f.file_field :picture, class: 'form-control' %>
 </div>
+
+
+
+
 
 <%= f.submit 'Add Post', class: 'btn btn-primary' %>
 <% end %>
