@@ -1,0 +1,13 @@
+<h1>Comments#show</h1>
+<p>Find me in app/views/comments/show.html.erb</p>
+
+<h1><%= @comment.title %></h1>
+<h2><%= @comment.body %></h2>
+
+<!-- show the name of the user who made the comment -->
+Commented by: <%= link_to @comment.user.name, user_path(@comment.user) %>
+about <%= time_ago_in_words @comment.created_at %> ago
+
+<% if current_user == @comment.user %>
+<%= link_to 'Edit Comment', edit_comment_path(@comment.id), class: 'btn btn-warning btn-lg"' %>
+<% end %>

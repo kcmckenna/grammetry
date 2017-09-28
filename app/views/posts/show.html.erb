@@ -11,4 +11,5 @@ about <%= time_ago_in_words @post.created_at %> ago
 
 <% if current_user == @post.user %>
 <%= link_to 'Edit Post', edit_post_path(@post.id), class: 'btn btn-warning btn-lg"' %>
+<%= link_to 'Add Comment', new_comment_path(@comment.post.id), class: 'btn btn-success btn-lg"' %>
 <% end %>

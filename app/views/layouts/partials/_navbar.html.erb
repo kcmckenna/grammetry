@@ -4,12 +4,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   
-    <div class="collapse navbar-collapse float-right" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto"></ul>
         <ul class="navbar-nav">
         <% if logged_in? %>
             <li class="nav-item">
-            <%= link_to 'Home', user_path(current_user), class: 'nav-link' %>
+            <%= link_to current_user.name, user_path(current_user), class: 'nav-link' %>
             </li>
             <li class="nav-item">
             <%= link_to 'Edit Profile', edit_user_path(current_user), class: 'nav-link' %>
@@ -20,9 +20,6 @@
             <li class="nav-item">
             <%= link_to 'Logout', logout_path, class: 'nav-link', method: 'delete' %>
             </li>
-            <!-- <li class="nav-item">
-                    <button class="btn btn-danger navbar-btn" <%= link_to 'Delete Account', user_path(current_user), class: 'nav-link', method: 'delete' %> </button>
-            </li> -->
             <form class="form-inline my-2 my-lg-0" action="<%= users_list_path %>" method="get">
             <input name="query" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>

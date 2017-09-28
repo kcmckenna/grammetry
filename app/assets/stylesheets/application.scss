@@ -4,6 +4,18 @@
     text-align: center;
 }
   
+a, .navbar-brand {
+  font-family: 'Oswald', sans-serif;
+}
+
+h1, .display-3{
+  font-family: 'Pacifico', cursive;
+}
+
+.lead {
+  margin-top: 30px;
+}
+
 .jumbotron {
   margin-top: 5%;
   margin-bottom: 0px;
@@ -12,8 +24,9 @@
   opacity: .75;
 }
   
-#footer-text {
-  text-align: center;
+copyright {
+  color: #727272;
+  text-align: right;
 }
 
 .container {
