@@ -1,20 +1,22 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
-
+<div class="row">
+<div class="col-sm-4">
 <h1><%= @user.name %></h1>
 <%= image_tag @user.avatar.url(:medium) %>
 <h3><%= @user.location %></h3>
 <h3><%= @user.zip_code %></h3>
 <p><%= @user.bio %></p>
+</div>
 <br>
+<div class="col-sm-8">
 <ul>
+<%= link_to 'Go to All Users', users_list_path, class: 'btn btn-success btn-lg"' %>
+<%= link_to 'Go to All Posts', posts_path, class: 'btn btn-success btn-lg"' %>
+<%= link_to 'Go to All Comments', comments_path, class: 'btn btn-success btn-lg"' %>
     <% @user.posts.each do |p| %>
         <li><%= link_to(p.title, post_path(p)) %></li>
     <% end %>
 </ul>
-
-<%= link_to 'Go to All Users', users_list_path, class: 'btn btn-success btn-lg"' %>
-
-<%= link_to 'Go to All Posts', posts_path, class: 'btn btn-success btn-lg"' %>
-
-<%= link_to 'Go to All Comments', comments_path, class: 'btn btn-success btn-lg"' %>
+</div>
+</div>

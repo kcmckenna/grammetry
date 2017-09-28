@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post)
     else
+      flash[:danger] = "You gotta fill out the form!"
       redirect_to new_post_path
     end
   end

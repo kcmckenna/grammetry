@@ -14,12 +14,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @user = User.find params[:id]
-    @post = current_user.posts.new(post_params)
     @comment = current_user.comments.new(comment_params)
+    # @comment.post = 
+
     if @comment.save
-      redirect_to comment_path(@comment)
+      redirect_to post_path(@comment)
     else
+      flash[:danger] = "You gotta fill out the form!"
       redirect_to new_comment_path
     end
   end
@@ -50,6 +51,6 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:user_id, :title, :body)
+    params.require(:comment).permit(:user, :post, :title, :body)
   end
 end
