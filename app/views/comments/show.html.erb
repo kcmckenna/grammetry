@@ -8,6 +8,10 @@
 Commented by: <%= link_to @comment.user.name, user_path(@comment.user) %>
 about <%= time_ago_in_words @comment.created_at %> ago
 
+<%= link_to 'Back', :back, class: 'btn btn-secondary btn-md'%>
+
 <% if current_user == @comment.user %>
 <%= link_to 'Edit Comment', edit_comment_path(@comment.id), class: 'btn btn-warning btn-lg"' %>
 <% end %>
+<%= link_to 'Go back to All Users', users_list_path, class: 'btn btn-success btn-lg"' %>
+<%= link_to 'Go back to All Posts', posts_path, class: 'btn btn-success btn-lg"' %>

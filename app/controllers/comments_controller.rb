@@ -15,13 +15,11 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.new(comment_params)
-    # @comment.post = 
-
     if @comment.save
-      redirect_to post_path(@comment)
+      redirect_to post_path(@comment.post)
     else
       flash[:danger] = "You gotta fill out the form!"
-      redirect_to new_comment_path
+      redirect_to post_path(@comment.post)
     end
   end
 
@@ -45,12 +43,12 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy
-      redirect_to user_path(current_user)
+      redirect_back fallback_location: posts_path
     end
   end
 
   private
   def comment_params
-    params.require(:comment).permit(:user, :post, :title, :body)
+    params.require(:comment).permit(:user_id, :post_id, :title, :body)
   end
 end

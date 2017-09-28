@@ -10,13 +10,15 @@
 </div>
 <br>
 <div class="col-sm-8">
+<h1>Your Posts</h1>
 <ul>
-<%= link_to 'Go to All Users', users_list_path, class: 'btn btn-success btn-lg"' %>
-<%= link_to 'Go to All Posts', posts_path, class: 'btn btn-success btn-lg"' %>
-<%= link_to 'Go to All Comments', comments_path, class: 'btn btn-success btn-lg"' %>
     <% @user.posts.each do |p| %>
         <li><%= link_to(p.title, post_path(p)) %></li>
     <% end %>
 </ul>
+<%= link_to 'Go to All Users', users_list_path, class: 'btn btn-success btn-lg"' %>
+<%= link_to 'Go to All Posts', posts_path, class: 'btn btn-success btn-lg"' %>
+<%= link_to 'Go to All Comments', comments_path, class: 'btn btn-success btn-lg"' %>
+
 </div>
 </div>

@@ -7,6 +7,7 @@ end
 
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
+# gem 'closure_tree'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 gem 'dotenv-rails', :group => :development

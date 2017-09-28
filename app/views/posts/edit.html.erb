@@ -19,6 +19,7 @@
     <div class="form-group">
         <div class="col-md-8 col-md-offset-4">
             <%= f.submit 'Update Post', class: 'btn btn-success', method: 'patch' %>
+            <%= link_to 'Cancel', :back, class: 'btn btn-secondary btn-md'%>
             <%= link_to 'Delete Post', post_path(current_user), class: 'btn btn-danger', method: 'delete' %>
         </div>
     </div>
