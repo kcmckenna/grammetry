@@ -52,9 +52,9 @@
     <div class="form-group">
         <div class="col-md-8 col-md-offset-4">
             <div class="btn btn-group">
-            <%= f.submit 'Update Account', class: 'btn btn-outline-success', method: 'patch' %>
+            <%= f.submit 'Update', class: 'btn btn-outline-success', method: 'patch' %>
             <%= link_to 'Cancel', :back, class: 'btn btn-outline-secondary btn-md'%>
-            <%= link_to "Delete Account", user_path(current_user), class: 'btn btn-danger', method: 'delete' %>
+            <%= link_to 'Delete', user_path(current_user), class: 'btn btn-danger', method: 'delete' %>
         </div>
         </div>
     </div>

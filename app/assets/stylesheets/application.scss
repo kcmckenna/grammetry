@@ -10,6 +10,8 @@
 
 h1, .display-3{
   font-family: 'Pacifico', cursive;
+  text-shadow: 1px 1px 3px rgba(186, 184, 184, 0.72);
+  color: #F9AB24;
   margin-top: 0px;
 }
 
@@ -26,21 +28,11 @@ li {
   margin-top: 30px;
 }
 
-.jumbotron {
-  margin-top: 5%;
-  margin-bottom: -30px;
-  width: 600px;
-  height: 375px;
-  color: rgba(0, 0, 0, 0.5);
-  text-shadow: 1px 1px 3px rgba(186, 184, 184, 0.72);
-  opacity: .25;
-}
-
 .main_page_text {
   margin-top: 250px;
   margin-bottom: -100px;
-  width: 600px;
-  height: 375px;
+  width: 390px;
+  height: 125px;
   color: rgba(184, 184, 184, 0.81);
   text-shadow: 1px 1px 3px rgba(186, 184, 184, 0.72);
 }
@@ -56,14 +48,15 @@ copyright {
 
 .links {
   font-family: 'Oswald', sans-serif;
-  font-size: 50px;
-  text-decoration: none !important;
-  list-style: none;
-  text-decoration-color: black !important;
+  font-size: 40px;
+  text-decoration: none ;
+  list-style: none ;
+  text-decoration-color: black ;
 }
 
 a:-webkit-any-link {
   text-decoration: none;
+  color: black;
   cursor: auto;
 }
 
@@ -71,10 +64,23 @@ body, html {
   height: 100%;
 }
 
-body.home {
+@media (min-width: 300px) and (max-width: 768px) {
+  body.home {
+    background-color: #000000;
+    background-image: image-url("grammetry_mobile.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 769px) { body.home {
   background-image: image-url('grammetry_logo_background.png');
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+}
+
+
