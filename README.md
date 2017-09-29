@@ -42,7 +42,7 @@ The app was generated using Ruby on Rails.
 
 ERD Diagram erd
 
-![ERD](/Users/kevincmckenna/Desktop/Screen Shot 2017-09-29 at 7.57.38 AM.png)
+![ERD](/Users/kevincmckenna/Desktop/erd_diagram_grammetry.png)
 
 Original Page Wireframes
 
