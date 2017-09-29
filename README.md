@@ -1,4 +1,4 @@
-![Grammetry](/Users/kevincmckenna/Desktop/Screen Shot 2017-09-29 at 7.22.17 AM.png)
+![Grammetry](/Users/kevincmckenna/WDI_51/w06/grammetry/app/assets/images/Screen Shot 2017-09-29 at 7.22.17 AM.png)
 
 # Grammetry 
 
