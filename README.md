@@ -1,6 +1,6 @@
 ![Grammetry](/Users/kevincmckenna/WDI_51/w06/grammetry/app/assets/images/Screen Shot 2017-09-29 at 7.22.17 AM.png)
 
-# Grammetry 
+# [Grammetry](https://damp-beach-86915.herokuapp.com/) 
 
 A rails based web app that allows people to connect with other like-minded Instagram users based on similar photography interests, such as hashtag uses, types of photography, cameras they use, and more.
 
