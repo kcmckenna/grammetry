@@ -1,6 +1,5 @@
-
 <%= form_for @user, :html => {class: 'edit_user form-horizontal'} do |f| %>
-<div class="row"><legend class="col-md-4 col-md-offset-4">Modify Account:</legend></div>
+<div class="row"><legend class="col-md-4 col-md-offset-4"><h1>Modify Account:</h1></legend></div>
 <fieldset>
     <div class="form-group">
         <%= f.label :name, 'Name*', class: 'col-md-4 control-label' %>
@@ -52,9 +51,11 @@
     </div>
     <div class="form-group">
         <div class="col-md-8 col-md-offset-4">
-            <%= f.submit 'Update Account', class: 'btn btn-success', method: 'patch' %>
-            <%= link_to 'Cancel', :back, class: 'btn btn-secondary btn-md'%>
+            <div class="btn btn-group">
+            <%= f.submit 'Update Account', class: 'btn btn-outline-success', method: 'patch' %>
+            <%= link_to 'Cancel', :back, class: 'btn btn-outline-secondary btn-md'%>
             <%= link_to "Delete Account", user_path(current_user), class: 'btn btn-danger', method: 'delete' %>
+        </div>
         </div>
     </div>
 </fieldset>

@@ -4,13 +4,22 @@
     text-align: center;
 }
   
-a, .navbar-brand {
+.navbar-brand {
   font-family: 'Oswald', sans-serif;
 }
 
 h1, .display-3{
   font-family: 'Pacifico', cursive;
-  margin-top: -20px;
+  margin-top: 0px;
+}
+
+ul {
+  list-style: none;
+
+}
+
+li {
+  font-family: 'Oswald', sans-serif;
 }
 
 .lead {
@@ -22,9 +31,18 @@ h1, .display-3{
   margin-bottom: -30px;
   width: 600px;
   height: 375px;
-  color: #49433A;
-  text-shadow: 2px 2px 4px rgba(186, 184, 184, 0.72);
-  opacity: .75;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgba(186, 184, 184, 0.72);
+  opacity: .25;
+}
+
+.main_page_text {
+  margin-top: 250px;
+  margin-bottom: -100px;
+  width: 600px;
+  height: 375px;
+  color: rgba(184, 184, 184, 0.81);
+  text-shadow: 1px 1px 3px rgba(186, 184, 184, 0.72);
 }
   
 copyright {
@@ -33,11 +51,30 @@ copyright {
 }
 
 .container {
-  margin-bottom: 50px;
+  margin-bottom: 70px;
+}
+
+.links {
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  text-decoration: none !important;
+  list-style: none;
+  text-decoration-color: black !important;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: auto;
+}
+
+body, html {
+  height: 100%;
 }
 
 body.home {
   background-image: image-url('grammetry_logo_background.png');
+  height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }

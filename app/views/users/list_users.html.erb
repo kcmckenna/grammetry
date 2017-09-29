@@ -1,9 +1,23 @@
-<h1>Grammetry Users</h1>
 
-<ul>
-    <% @users.each do |u| %>
-        <li><%= link_to u.name, user_path(u) %></li>
-    <% end %>
-</ul>
+<div class="card text-center">
+        <div class="card-header">
+                <h1>Grammetry Users</h1>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">
+              <ul>
+                <% @users.each do |u| %>
+                    <li class="links"><%= link_to u.name, user_path(u) %></li>
+                <% end %>
+            </ul></h4>
+          <p class="card-text"></p>
+        </div>
+        <div class="card-footer text-muted">
+            <%= link_to 'Back', :back, class: 'btn btn-secondary btn-md'%>
+        </div>
+      </div>
 
-<%= link_to 'Back', :back, class: 'btn btn-secondary btn-md'%>
+
+
+
+

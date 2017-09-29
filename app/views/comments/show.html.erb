@@ -1,17 +1,29 @@
-<h1>Comments#show</h1>
-<p>Find me in app/views/comments/show.html.erb</p>
+<div class="card text-center">
+        <div class="card-header">
+                <h1><%= @comment.title %></h1>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Commented by: <%= link_to @comment.user.name, user_path(@comment.user) %>
+            about <%= time_ago_in_words @comment.created_at %> ago</h4>
+          <p class="card-text"><h2><%= @comment.body %></h2></p>
+          <div class="btn btn-group">
+          <%= link_to 'Back', :back, class: 'btn btn-secondary btn-md'%>
+          <% if current_user == @comment.user %>
+          <%= link_to 'Edit Comment', edit_comment_path(@comment.id), class: 'btn btn-outline-warning btn-lg"' %>
+          <% end %>
+          <%= link_to 'Go back to All Users', users_list_path, class: 'btn btn-outline-success btn-lg"' %>
+          <%= link_to 'Go back to All Posts', posts_path, class: 'btn btn-outline-success btn-lg"' %>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
 
-<h1><%= @comment.title %></h1>
-<h2><%= @comment.body %></h2>
+        </div>
+      </div>
+
+
+
+
 
 <!-- show the name of the user who made the comment -->
-Commented by: <%= link_to @comment.user.name, user_path(@comment.user) %>
-about <%= time_ago_in_words @comment.created_at %> ago
 
-<%= link_to 'Back', :back, class: 'btn btn-secondary btn-md'%>
 
-<% if current_user == @comment.user %>
-<%= link_to 'Edit Comment', edit_comment_path(@comment.id), class: 'btn btn-warning btn-lg"' %>
-<% end %>
-<%= link_to 'Go back to All Users', users_list_path, class: 'btn btn-success btn-lg"' %>
-<%= link_to 'Go back to All Posts', posts_path, class: 'btn btn-success btn-lg"' %>

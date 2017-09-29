@@ -1,11 +1,8 @@
-<h1>Comments#index</h1>
-<p>Find me in app/views/comments/index.html.erb</p>
-
 <h1>All Comments List</h1>
 
 <ul>
     <% @comments.each do |p| %>
-        <li><%= link_to p.title, comment_path(p) %></li>
+        <li class="links"><%= link_to p.title, comment_path(p) %></li>
     <% end %>
 </ul>
 

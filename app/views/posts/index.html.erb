@@ -1,14 +1,26 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="card text-center">
+        <div class="card-header">
+                <h1>All Posts List</h1>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title"></h4>
+          <div class="card-text">
+              <ul>
+                <% @posts.each do |p| %>
+                    <li class="links"><%= link_to p.title, post_path(p) %></li>
+                <% end %>
+            </ul>
+        </div>
+        </div>
 
-<h1>All Posts List</h1>
+        <div class="card-footer text-muted">
+            <div class="btn btn-group-justified">
+                <%= link_to 'Go to All Users', users_list_path, class: 'btn btn-outline-success btn-lg"' %>
+                <%= link_to 'Back', :back, class: 'btn btn-secondary btn-md'%>
+            </div>
+        </div>
+      </div>
 
-<ul>
-    <% @posts.each do |p| %>
-        <li><%= link_to p.title, post_path(p) %></li>
-    <% end %>
-</ul>
 
-<%= link_to 'Go to All Users', users_list_path, class: 'btn btn-success btn-lg"' %>
 
-<%= link_to 'Back', :back, class: 'btn btn-secondary btn-md'%>
+

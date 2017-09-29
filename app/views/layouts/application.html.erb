@@ -10,7 +10,7 @@
   </head>
 
   <body class="<%= "home" if current_page?(root_path) %>">
-
+    <div class="home">
     <%= render 'layouts/partials/navbar' %>
     <%= render 'layouts/partials/flash' %>
     <%= render 'layouts/partials/modal' %>
@@ -18,5 +18,6 @@
       <%= yield %>
     </div>
     <%= render 'layouts/partials/footer' %>
+  </div>
   </body>
 </html>

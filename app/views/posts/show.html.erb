@@ -1,33 +1,39 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="card text-center">
+        <div class="card-header">
+                <h1><%= @post.title %></h1>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title"><%= image_tag @post.picture.url %></h4>
+          <p class="card-text"><h2><%= @post.body %></h2></p>
+          <div class="btn-group btn-group-justified">
+          <%= link_to 'Back', :back, class: 'btn-group btn-group-justified btn-secondary btn-lg'%>
+          <% if current_user == @post.user %>
+          <%= link_to 'Edit Post', edit_post_path(@post.id), class: 'btn-group btn-group-justified btn-outline-warning btn-lg' %>
+          <% end %>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+            <!-- show the name of the user who made the post -->
+            Posted by: <%= link_to @post.user.name, user_path(@post.user) %>
+            about <%= time_ago_in_words @post.created_at %> ago
+        </div>
+      </div>
+<br>
 
-<h1><%= @post.title %></h1>
-<h2><%= @post.body %></h2>
-<h2><%= image_tag @post.picture.url %></h2>
-
-<!-- show the name of the user who made the post -->
-Posted by: <%= link_to @post.user.name, user_path(@post.user) %>
-about <%= time_ago_in_words @post.created_at %> ago
-
-<%= link_to 'Back', :back, class: 'btn btn-secondary btn-md'%>
-<% if current_user == @post.user %>
-<%= link_to 'Edit Post', edit_post_path(@post.id), class: 'btn btn-warning btn-lg"' %>
-<% end %>
-
-<h2>Comments</h2>
+<h1>Comments</h1>
 
 <ul>
     <% @post.comments.each do |c| %>
-        <li><%= link_to(c.title, comment_path(c)) %></li>
+        <li class="links"><%= link_to(c.title, comment_path(c)) %></li>
         <% if current_user == c.user %>
-            <%= link_to 'Edit Comment', edit_comment_path(c.id), class: 'btn btn-warning btn-sm' %>
+            <%= link_to 'Edit Comment', edit_comment_path(c.id), class: 'btn btn-outline-warning btn-sm' %>
         <% end %>
         <% if current_user == @post.user || c.user %>
-        <%= link_to 'Delete Comment', comment_path(c.id), class: 'btn btn-danger btn-sm', method: 'delete' %>
+        <%= link_to 'Delete Comment', comment_path(c.id), class: 'btn btn-outline-danger btn-sm', method: 'delete' %>
         <% end %>
     <% end %>
 </ul>
-
+<br>
 <%= form_for @comment do |f| %>
 <h1>New Comment:</h1>
 <div class="form-group">
