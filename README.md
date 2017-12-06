@@ -12,7 +12,7 @@ The purpose of this site is to make it convenient to connect and possibly collab
 
 - Visit the github repository to download the app to your local machine.
 
-- This app was built with Ruby 2.3.3.
+- This app was built with Ruby 2.4.1.
 
 ## Installation Instructions
 
